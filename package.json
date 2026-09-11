@@ -1,0 +1,19 @@
+{
+  "name": "@yurei-so/research-tools",
+  "version": "0.1.0",
+  "description": "Reusable, self-hostable instruments for published research corpora",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./attention": "./src/attention-map.mjs",
+    "./interchange": "./src/interchange.mjs",
+    "./provenance": "./src/provenance.mjs"
+  },
+  "files": ["src", "README.md", "LICENSE"],
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check src/*.mjs"
+  },
+  "engines": { "node": ">=22" }
+}
