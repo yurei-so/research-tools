@@ -45,6 +45,31 @@ The package validates `research-corpus/v1` documents:
 Consumers may add fields, but the core validator rejects unknown relation types,
 dangling targets, duplicate IDs, and provenance edges without a rationale.
 
+## Deployment kit
+
+This repository is also a working GitHub Pages starter. Replace `corpus.json` with a
+deliberate `research-corpus/v1` public export, edit the site title in the build command if
+desired, and enable Pages with **GitHub Actions** as its source. The included workflow
+validates, tests, builds, and deploys the static library on every push to `main`.
+
+```sh
+npm ci
+npm test
+npm run build
+```
+
+The generated site includes family cards, standalone note pages, authored provenance,
+and corpus-relative attention maps. Faint connectors in attention space are copied only
+from explicit authored relations; vector proximity never creates them. The builder reads
+only the supplied interchange file and has no Context Server, database, private-path, or
+network integration.
+
+For another repository or a custom export path:
+
+```sh
+npx research-tools build --corpus public/corpus.json --out dist --title "My Research"
+```
+
 ## License
 
 AGPL-3.0-only.

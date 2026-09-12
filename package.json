@@ -4,14 +4,17 @@
   "description": "Reusable, self-hostable instruments for published research corpora",
   "license": "AGPL-3.0-only",
   "type": "module",
+  "bin": { "research-tools": "./bin/research-tools.mjs" },
   "exports": {
     ".": "./src/index.mjs",
     "./attention": "./src/attention-map.mjs",
     "./interchange": "./src/interchange.mjs",
-    "./provenance": "./src/provenance.mjs"
+    "./provenance": "./src/provenance.mjs",
+    "./site": "./src/site.mjs"
   },
-  "files": ["src", "README.md", "LICENSE"],
+  "files": ["bin", "src", "README.md", "LICENSE"],
   "scripts": {
+    "build": "node bin/research-tools.mjs build --corpus corpus.json --out dist",
     "test": "node --test tests/*.test.mjs",
     "check": "node --check src/*.mjs"
   },
